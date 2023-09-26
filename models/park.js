@@ -25,6 +25,16 @@ class Park {
         }
         return mostPopularDinosaur
       }
+    dinosOfCertainSpecies(species) {
+        const matchingDinos = []
+        for (const dinosaur of this.dinosaurs) {
+            if (dinosaur.species === species)
+                matchingDinos.push(dinosaur)
+            
+        }
+        return matchingDinos
+    }
+
       }
     
 

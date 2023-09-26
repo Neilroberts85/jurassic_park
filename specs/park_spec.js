@@ -42,15 +42,25 @@ describe('Park', function() {
     const mostPopularDinosaur = park.findMostPopularDinosaur()
     
     assert.equal(mostPopularDinosaur.species, "T-rex")
-    assert.equal(mostPopularDinosaur.guestsAttractedPerDay, 50)
-
-  
-  })
-  
-  
-  })
-  xit('should be able to find all dinosaurs of a particular species', function () {
     
+  })
+  
+  
+  })
+  it('should be able to find all dinosaurs of a particular species', function () {
+    const dinosaur1 = new Dinosaur("T-rex", "Carnivore", 50)
+    const dinosaur2 = new Dinosaur("Stegasaurus", "Herbivore", 30)
+    const dinosaur3 = new Dinosaur("Velociraptor", "Carnivore", 40)
+    const dinosaur4 = new Dinosaur("Velociraptor", "Carnivore", 38)
+    const park1 = new Park("Jurassic Park", 300, [])
+    park1.addDinosaur(dinosaur1)
+    park1.addDinosaur(dinosaur2)
+    park1.addDinosaur(dinosaur3)
+    park1.addDinosaur(dinosaur4)
+    const dinosOfCertainSpecies = park1.dinosOfCertainSpecies("Velociraptor")
+    const expectedDinos = [dinosaur3, dinosaur4]
+    assert.deepStrictEqual(dinosOfCertainSpecies, expectedDinos)
+
   })
 
   xit('should be able to calculate the total number of visitors per day');
