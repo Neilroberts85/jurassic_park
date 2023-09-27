@@ -4,8 +4,18 @@ const Dinosaur = require('../models/dinosaur.js');
 
 describe('Park', function() {
     let park
+    let dinosaur1
+    let dinosaur2
+    let dinosaur3
+    let dinosaur4
+  
+  
   beforeEach(function () {
-    park = new Park("Jurassic Park", 300, [])
+    dinosaur1 = new Dinosaur("T-rex", "Carnivore", 50)
+    dinosaur2 = new Dinosaur("Stegasaurus", "Herbivore", 30)
+    dinosaur3 = new Dinosaur("Velociraptor", "Carnivore", 40)
+    dinosaur4 = new Dinosaur("Velociraptor", "Carnivore", 38)
+    park = new Park("Jurassic Park", 300)
   })
 
 
@@ -32,10 +42,7 @@ describe('Park', function() {
 
 
   it('should be able to find the dinosaur that attracts the most visitors', function () {
-    const dinosaur1 = new Dinosaur("T-rex", "Carnivore", 50)
-    const dinosaur2 = new Dinosaur("Stegasaurus", "Herbivore", 30)
-    const dinosaur3 = new Dinosaur("Velociraptor", "Carnivore", 40)
-    const park = new Park("Jurassic Park", 300, [])
+   
     park.addDinosaur(dinosaur1)
     park.addDinosaur(dinosaur2)
     park.addDinosaur(dinosaur3)
@@ -46,13 +53,7 @@ describe('Park', function() {
   })
   
   
-  })
   it('should be able to find all dinosaurs of a particular species', function () {
-    const dinosaur1 = new Dinosaur("T-rex", "Carnivore", 50)
-    const dinosaur2 = new Dinosaur("Stegasaurus", "Herbivore", 30)
-    const dinosaur3 = new Dinosaur("Velociraptor", "Carnivore", 40)
-    const dinosaur4 = new Dinosaur("Velociraptor", "Carnivore", 38)
-    const park = new Park("Jurassic Park", 300, [])
     park.addDinosaur(dinosaur1)
     park.addDinosaur(dinosaur2)
     park.addDinosaur(dinosaur3)
@@ -64,11 +65,7 @@ describe('Park', function() {
   })
 
   it('should be able to calculate the total number of visitors per day', function () {
-    const dinosaur1 = new Dinosaur("T-rex", "Carnivore", 50)
-    const dinosaur2 = new Dinosaur("Stegasaurus", "Herbivore", 30)
-    const dinosaur3 = new Dinosaur("Velociraptor", "Carnivore", 40)
-    const dinosaur4 = new Dinosaur("Velociraptor", "Carnivore", 38)
-    const park = new Park("Jurassic Park", 300, [])
+    
     park.addDinosaur(dinosaur1)
     park.addDinosaur(dinosaur2)
     park.addDinosaur(dinosaur3)
@@ -84,3 +81,4 @@ describe('Park', function() {
 
   xit('should be able to calculate total revenue for one year');
 
+})
