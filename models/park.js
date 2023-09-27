@@ -35,6 +35,14 @@ class Park {
         return matchingDinos
     }
 
+    totalVisitorsPerDay () {
+        let visitorsPerDay = 0
+        for (const dinosaur of this.dinosaurs) {
+            visitorsPerDay += dinosaur.guestsAttractedPerDay
+        }
+        return visitorsPerDay
+    }
+
       }
     
 
