@@ -43,6 +43,13 @@ class Park {
         return visitorsPerDay
     }
 
+    totalVisitorsPerYear () {
+        return this.totalVisitorsPerDay() * 365
+    }
+
+    totalRevenuePerYear() {
+        return this.totalVisitorsPerYear() * this.ticketprice
+    }
       }
     
 

@@ -19,11 +19,27 @@ describe('Park', function() {
   })
 
 
-  xit('should have a name');
+  it('should have a name', function () {
+    const expectedName = "Jurassic Park"
+    const actualName = park.name 
+    assert.deepStrictEqual(actualName, expectedName)
+  })
 
-  xit('should have a ticket price');
+  it('should have a ticket price', function () {
+    const expectedTicketPrice = 300
+    const actualTicketPrice = park.ticketprice
+    assert.deepStrictEqual(actualTicketPrice, expectedTicketPrice)
+  });
 
-  xit('should have a collection of dinosaurs');
+  it('should have a collection of dinosaurs', function () {
+    park.addDinosaur(dinosaur1)
+    park.addDinosaur(dinosaur2)
+    park.addDinosaur(dinosaur3)
+    park.addDinosaur(dinosaur4)
+    const expectedDinos = [dinosaur1, dinosaur2, dinosaur3, dinosaur4]
+    const actualDinos = park.dinosaurs
+    assert.deepStrictEqual(actualDinos, expectedDinos)
+  });
 
   it('should be able to add a dinosaur to its collection', function () {
     park.addDinosaur('T-rex')
@@ -77,8 +93,24 @@ describe('Park', function() {
     
   })
 
-  xit('should be able to calculate the total number of visitors per year');
+  it('should be able to calculate the total number of visitors per year', function (){
+    park.addDinosaur(dinosaur1)
+    park.addDinosaur(dinosaur2)
+    park.addDinosaur(dinosaur3)
+    park.addDinosaur(dinosaur4)
+    const expectedVisitors = 57670
+    const actualVisitors = park.totalVisitorsPerYear()
+    assert.strictEqual(actualVisitors, expectedVisitors)
+  });
 
-  xit('should be able to calculate total revenue for one year');
+  it('should be able to calculate total revenue for one year', function () {
+    park.addDinosaur(dinosaur1)
+    park.addDinosaur(dinosaur2)
+    park.addDinosaur(dinosaur3)
+    park.addDinosaur(dinosaur4)
+    const expectedRevenue = 17301000
+    const actualRevenue = park.totalRevenuePerYear()
+    assert.deepStrictEqual(actualRevenue,expectedRevenue)
+  });
 
 })
